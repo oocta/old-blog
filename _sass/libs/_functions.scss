@@ -33,3 +33,9 @@
 @function _size($keys...) {
 	@return val($size, $keys...);
 }
+
+
+/// Gets a Environment value.
+@function _env($keys...) {
+	@return val($env, $keys...);
+}
