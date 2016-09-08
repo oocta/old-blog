@@ -1,12 +1,16 @@
 // Misc.
 	$misc: (
-		z-index-base:		10000
+		z-index-base:		10000,
+		max-features: 10,
+		max-spotlights: 10
 	);
 
 // Duration.
 	$duration: (
 		navPanel:			0.5s,
-		transition:			0.2s
+		transition:			0.2s,
+		menu: 0.5s,
+		fadein: 3s
 	);
 
 // Size.
@@ -14,7 +18,8 @@
 		navPanel:			275px,
 		border-radius:		6px,
 		element-height:		3em,
-		element-margin:		2em
+		element-margin:		2em,
+		letter-spacing: -1px
 	);
 
 // Font.
@@ -23,6 +28,7 @@
 		family-fixed:		monospace,
 		weight:				300,
 		weight-bold:		400,
+		weight-extrabold: 600
 	);
 
 // Palette.
@@ -72,6 +78,20 @@
 		),
 
 		accent5: (
+			bg:				#e5cb95,
+			fg:				mix(#e5cb95, #ffffff, 25%),
+			fg-bold:		#ffffff,
+			fg-light:		mix(#e5cb95, #ffffff, 40%)
+		),
+
+		accent6: (
+			bg:				#e5cb95,
+			fg:				mix(#e5cb95, #ffffff, 25%),
+			fg-bold:		#ffffff,
+			fg-light:		mix(#e5cb95, #ffffff, 40%)
+		),
+
+		accent7: (
 			bg:				#e5cb95,
 			fg:				mix(#e5cb95, #ffffff, 25%),
 			fg-bold:		#ffffff,

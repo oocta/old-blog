@@ -23,6 +23,7 @@
 /// @param {string} $keys Key(s).
 /// @return {string} Value.
 @function _palette($keys...) {
+	// @debug($keys);
 	@return val($palette, $keys...);
 }
 
