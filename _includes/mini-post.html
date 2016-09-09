@@ -10,7 +10,7 @@
           <time class="published" datetime="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</time>
           <a href="#" class="author"><img src="{{ post.avartar }}" alt="" /></a>
         </header>
-        <a href="{{ post.url }}" class="image"><img src="{{ post.featured }}" alt="" /></a>
+        <a href="{{ post.url }}" class="image"><img src="{{ post.featured | prepend: site.baseurl }}" alt="" /></a>
       </article>
     {% endfor %}
   </div>

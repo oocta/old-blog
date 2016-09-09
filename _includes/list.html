@@ -12,7 +12,7 @@
         <a href="{{ site.author.about }}" class="author"><span class="name"><strong>{{ site.author.name }}</strong></span><img src="{{ site.author.avatar | prepend: site.baseurl }}" alt="" /></a>
       </div>
     </header>
-    <a href="#" class="image featured"><img src="{{ post.featured }}" alt="" /></a>
+    <a href="#" class="image featured"><img src="{{ post.featured | prepend: site.baseurl }}" alt="" /></a>
     <p>{{ post.excerpt }}</p>
     <footer>
       <ul class="actions">
