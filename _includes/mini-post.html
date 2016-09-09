@@ -8,9 +8,13 @@
         <header>
           <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
           <time class="published" datetime="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-          <a href="#" class="author"><img src="{{ post.avartar }}" alt="" /></a>
+          <a href="#" class="author">
+            <img src="{{ site.author.avatar | prepend: site.baseurl }}" alt="author thumbnail" />
+          </a>
         </header>
-        <a href="{{ post.url }}" class="image"><img src="{{ post.featured }}" alt="" /></a>
+        {% if post.featured %}
+        <a href="{{ post.url }}" class="image"><img src="{{ post.featured | prepend: site.baseurl }}" alt="" /></a>
+        {% endif %}
       </article>
     {% endfor %}
   </div>
