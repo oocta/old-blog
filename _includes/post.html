@@ -1,0 +1,31 @@
+<!-- Main -->
+<div id="main">
+
+	<!-- Post -->
+		<article class="post">
+			<header>
+				<div class="title">
+					<h2>{{ page.title }}</h2>
+          {% if page.subTitle %}
+					<p>{{ page.subTitle }}</p>
+          {% endif %}
+				</div>
+				<div class="meta">
+					<time class="published" datetime="{{ page.date }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+					<a href="#" class="author"><span class="name">{{ site.author.name }}</span><img src="{{ site.author.avatar | prepend: site.baseurl }}" alt="avatar" /></a>
+				</div>
+			</header>
+			<span class="image featured"><img src="{{ page.featured }}" alt="featured image" /></span>
+			{{ content }}
+			<footer>
+				<ul class="stats">
+          {% for cat in page.categories | split: ' ' %}
+          <li><a href="#">{{ cat }}</a></li>
+          {% endfor %}
+					<!-- <li><a href="#" class="icon fa-heart">28</a></li>
+					<li><a href="#" class="icon fa-comment">128</a></li> -->
+				</ul>
+			</footer>
+		</article>
+
+</div>

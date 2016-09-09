@@ -1,108 +1,45 @@
-//Environment
-	$env: (
-		baseurl: '/blog',
-		imgs: '/blog/assets/imgs'
-	);
-
 // Misc.
 	$misc: (
-		z-index-base:		10000,
-		max-features: 10,
-		max-spotlights: 10
+		z-index-base:				10000
 	);
 
 // Duration.
 	$duration: (
-		navPanel:			0.5s,
-		transition:			0.2s,
-		menu: 0.5s,
-		fadein: 3s
+		menu:						0.5s,
+		transition:					0.2s
 	);
 
 // Size.
 	$size: (
-		navPanel:			275px,
-		border-radius:		6px,
-		element-height:		3em,
-		element-margin:		2em,
-		letter-spacing: 0.0750em,
-		letter-spacing-alt: 0.225em
+		element-height:				2.75em,
+		element-margin:				2em,
+		section-spacing:			3em,
+		section-spacing-small:		1.5em,
+		menu:						25em
 	);
 
 // Font.
 	$font: (
-		family:				('Open Sans', Helvetica, sans-serif),
-		family-fixed:		monospace,
-		weight:				300,
-		weight-bold:		400,
-		weight-extrabold: 800
+		family:						("Apple Gothic","MalgumGothic","Lexi Gulim","Helvetica Neue","Helvetica","Arial", Helvetica, sans-serif),
+		family-fixed:				('Courier New', monospace),
+		family-heading:				("Apple Gothic","MalgumGothic","Lexi Gulim","Helvetica Neue","Helvetica","Arial", Helvetica, sans-serif),
+		weight:						400,
+		weight-bold:				700,
+		weight-heading:				400,
+		weight-heading-bold:		800,
+		weight-heading-extrabold:	900,
+		kerning-heading:			0em
 	);
 
 // Palette.
 	$palette: (
-		bg:					#2e3842,
-		fg:					#fff,
-		fg-bold:			#ffffff,
-		fg-light:			#999,
-		border:				#e5e5e5,
-		border-bg:			#f8f8f8,
-		border2:			#dddddd,
-		border2-bg:			#f0f0f0,
-
-		header: (
-			bg:				#444,
-			fg:				#bbb,
-			fg-bold:		#fff,
-			fg-light:		#999
-		),
-
-		accent1: (
-			bg:				#21b2a6,
-			fg:				mix(#666, #ffffff, 25%),
-			fg-bold:		#ffffff,
-			fg-light:		mix(#666, #ffffff, 40%)
-		),
-
-		accent2: (
-			bg:				#e89980,
-			fg:				mix(#e89980, #ffffff, 25%),
-			fg-bold:		#ffffff,
-			fg-light:		mix(#e89980, #ffffff, 40%)
-		),
-
-		accent3: (
-			bg:				#7fcdb8,
-			fg:				mix(#7fcdb8, #ffffff, 25%),
-			fg-bold:		#ffffff,
-			fg-light:		mix(#7fcdb8, #ffffff, 40%)
-		),
-
-		accent4: (
-			bg:				#90b0ba,
-			fg:				mix(#90b0ba, #ffffff, 25%),
-			fg-bold:		#ffffff,
-			fg-light:		mix(#90b0ba, #ffffff, 40%)
-		),
-
-		accent5: (
-			bg:				#505393,
-			fg:				mix(#e5cb95, #ffffff, 25%),
-			fg-bold:		#ffffff,
-			fg-light:		mix(#e5cb95, #ffffff, 40%)
-		),
-
-		accent6: (
-			bg:				#ef5e4a,
-			fg:				mix(#e5cb95, #ffffff, 25%),
-			fg-bold:		#ffffff,
-			fg-light:		mix(#e5cb95, #ffffff, 40%)
-		),
-
-		accent7: (
-			bg:				#e5cb95,
-			fg:				mix(#e5cb95, #ffffff, 25%),
-			fg-bold:		#ffffff,
-			fg-light:		mix(#e5cb95, #ffffff, 40%)
-		)
-
+		bg:							#ffffff,
+		bg-alt:						#f4f4f4,
+		fg:							#646464,
+		fg-bold:					#3c3b3b,
+		fg-light:					#aaaaaa,
+		border:						rgba(160,160,160,0.3),
+		border-bg:					rgba(160,160,160,0.075),
+		border-alt:					rgba(160,160,160,0.65),
+		accent:						#2ebaae
 	);
