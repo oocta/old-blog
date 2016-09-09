@@ -15,7 +15,9 @@
 					<a href="#" class="author"><span class="name">{{ site.author.name }}</span><img src="{{ site.author.avatar | prepend: site.baseurl }}" alt="avatar" /></a>
 				</div>
 			</header>
-			<span class="image featured"><img src="{{ page.featured }}" alt="featured image" /></span>
+      {% if page.featured %}
+			<span class="image featured"><img src="{{ page.featured | prepend: site.baseurl }}" alt="featured image" /></span>
+      {% endif %}
 			{{ content }}
 			<footer>
 				<ul class="stats">

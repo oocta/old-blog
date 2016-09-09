@@ -41,3 +41,7 @@ dir:
 excerpt_separator: <!-- more -->
 
 permalink: /:year/:month/:title
+
+paginate: 1
+
+gems: [jekyll-paginate]
