@@ -1,6 +1,6 @@
 <!-- Main -->
 <div id="main">
-  {% for post in site.posts %}
+  {% for post in paginator.posts %}
   <article class="post">
     <header>
       <div class="title">
@@ -12,7 +12,9 @@
         <a href="{{ site.author.about }}" class="author"><span class="name"><strong>{{ site.author.name }}</strong></span><img src="{{ site.author.avatar | prepend: site.baseurl }}" alt="" /></a>
       </div>
     </header>
-    <a href="#" class="image featured"><img src="{{ post.featured }}" alt="" /></a>
+    {% if post.featured %}
+    <a href="#" class="image featured"><img src="{{ post.featured | prepend: site.baseurl }}" alt="" /></a>
+    {% endif %}
     <p>{{ post.excerpt }}</p>
     <footer>
       <ul class="actions">
@@ -26,10 +28,7 @@
     </footer>
   </article>
   {% endfor %}
-
-<!-- Pagination -->
-	<ul class="actions pagination">
-		<li><a href="" class="disabled button big previous">Previous Page</a></li>
-		<li><a href="" class="button big next">Next Page</a></li>
-	</ul>
+  
+  {% include pagination.html %}
+  
 </div>
