@@ -1,0 +1,35 @@
+<!-- Main -->
+<div id="main">
+  {% for post in site.posts %}
+  <article class="post">
+    <header>
+      <div class="title">
+        <h2><a href="{{ post.url }}">{{ post.title | escape }}</a></h2>
+        {% if post.subTitle %}<p>{{ post.subTitle }}</p>{% endif %}
+      </div>
+      <div class="meta">
+        <time class="published" datetime="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        <a href="{{ site.author.about }}" class="author"><span class="name"><strong>{{ site.author.name }}</strong></span><img src="{{ site.author.avatar | prepend: site.baseurl }}" alt="" /></a>
+      </div>
+    </header>
+    <a href="#" class="image featured"><img src="{{ post.featured }}" alt="" /></a>
+    <p>{{ post.excerpt }}</p>
+    <footer>
+      <ul class="actions">
+        <li><a href="{{ post.url | prepend: site.baseurl }}" class="button big">Continue Reading</a></li>
+      </ul>
+      <ul class="stats">
+        {% for cat in post.categories | split: ' ' %}
+        <li><a href="#">{{ cat }}</a></li>
+        {% endfor %}
+      </ul>
+    </footer>
+  </article>
+  {% endfor %}
+
+<!-- Pagination -->
+	<ul class="actions pagination">
+		<li><a href="" class="disabled button big previous">Previous Page</a></li>
+		<li><a href="" class="button big next">Next Page</a></li>
+	</ul>
+</div>

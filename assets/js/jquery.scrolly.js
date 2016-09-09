@@ -1,87 +1,52 @@
-/*
- *  Project: Scrolly : parallax is easy as a matter of fact !
- *  Description: Based on jQuery boilerplate
- *  Author: Victor C. / Octave & Octave web agency
- *  Licence: MIT
- */
-!function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define(['jquery'], factory);
-  } else {
-    factory(root.jQuery);
-  }
-}(this, function($) {
-  'use strict';
+Spectral by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
-  // Create the defaults once
-  var pluginName = 'scrolly',
-  defaults = {
-    bgParallax: false
-  },
-  didScroll = false;
 
-  function Plugin( element, options ) {
-    this.element = element;
-    this.$element = $(this.element);
+A big, modern, blocky affair with a mobile-style menu, fully responsive styling,
+and an assortment of pre-styled elements. So, pretty much what you were expecting
+-- except, of course, for how it's put together, specifically:
 
-    this.options = $.extend( {}, defaults, options) ;
+- It's built on Skel 3*, a leaner, more modular rewrite of my responsive framework.
 
-    this._defaults = defaults;
-    this._name = pluginName;
+  (* = still in development as of this writing)
 
-    this.init();
-  }
+- It uses flexbox*, which eliminates all kinds of terrible hacks and clunky layout
+  stopgaps (like CSS grid systems).
 
-  Plugin.prototype.init = function () {
-    var self = this;
-    this.startPosition = this.$element.position().top;
-    this.offsetTop = this.$element.offset().top;
-    this.height = this.$element.outerHeight(true);
-    this.velocity = this.$element.attr('data-velocity');
-    this.bgStart = parseInt(this.$element.attr('data-fit'), 10);
+  (* = not supported on IE8/9, but non-flexbox fallbacks are included)
 
-    $(document).scroll(function(){
-      self.didScroll = true;
-    });
+- It uses Sass* a lot more intelligently, thanks in part to several new mixins
+  and functions I've been working on (as well as a few by @HugoGiraudel).
 
-    setInterval(function() {
-      if (self.didScroll) {
-        self.didScroll = false;
-        self.scrolly();
-      }
-    }, 10);
-  };
+  (* = still entirely optional if you prefer vanilla CSS :)
 
-  Plugin.prototype.scrolly = function() {
-    var dT =  $(window).scrollTop(),
-    wH = $(window).height(),
-    position = this.startPosition;
+- A ton of other stuff.
 
-    if(this.offsetTop >= (dT+wH)) {
-      this.$element.addClass('scrolly-invisible');
-    } else {
-      if(this.$element.hasClass('scrolly-invisible')){
-        position = this.startPosition + (dT + ( wH - this.offsetTop ) ) * this.velocity;
-      } else {
-        position = this.startPosition + dT  * this.velocity;
-      }
-    }
-    // Fix background position
-    if(this.bgStart){ position = position + this.bgStart; }
+In short, Spectral's the culmination of several new things I'm working on/trying out,
+so please, let me know what you think :)
 
-    if(this.options.bgParallax === true) {
-      this.$element.css({backgroundPosition: '50% '+position+'px'});
-    } else {
-      this.$element.css({top: position});
-    }
-  };
+Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
+you can use for pretty much whatever.
 
-  $.fn[pluginName] = function ( options ) {
-    return this.each(function () {
-      if (!$.data(this, 'plugin_' + pluginName)) {
-        $.data(this, 'plugin_' + pluginName, new Plugin( this, options ));
-      }
-    });
-  };
+(* = not included)
 
-});
+AJ
+aj@lkn.io | @ajlkn
+
+
+Credits:
+
+	Demo Images:
+		Unsplash (unsplash.com)
+
+	Icons:
+		Font Awesome (fortawesome.github.com/Font-Awesome)
+
+	Other:
+		jQuery (jquery.com)
+		html5shiv.js (@afarkas @jdalton @jon_neal @rem)
+		background-size polyfill (github.com/louisremi)
+		Misc. Sass functions (@HugoGiraudel)
+		Respond.js (j.mp/respondjs)
+		Skel (skel.io)

@@ -15,10 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: frontend
 email: function.bind@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: 프론트엔드에 대한 고민을 늘 하고 있지만, <br/>딱히 한건 없어서 블로그를 만들면<br/>뭔가 하지않을까 싶어서 만든 블로그.<br/>프론트엔드 개발자로 살아남기.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://localhost:4000" # the base hostname & protocol for your site
 twitter_username: o__octa
@@ -30,3 +27,17 @@ theme: minima
 
 sass:
   sass_dir: _sass
+  
+author:
+  name: oocta
+  about: "/about"
+  avatar: "/assets/imgs/avatar_oocta.jpg"
+  bio: '프론트엔드 개발자'
+
+dir:
+  postImg: '/assets/postImgs'
+
+# post config
+excerpt_separator: <!-- more -->
+
+permalink: /:year/:month/:title

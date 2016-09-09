@@ -1,0 +1,19 @@
+<!-- Posts List -->
+<section>
+  <h3>Featured Posts</h3>
+  <ul class="posts">
+    {% for post in site.posts %}
+    {% if post.categories contains "featured" %}
+    <li>
+      <article>
+        <header>
+          <h3><a href="#">{{ post.title }}</a></h3>
+          <time class="published" datetime="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        </header>
+        <a href="{{ post.url }}" class="image"><img src="{{ post.featured | prepend: site.baseurl }}" alt="" /></a>
+      </article>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</section>

@@ -1,0 +1,22 @@
+<!-- Sidebar -->
+<section id="sidebar">
+
+<!-- Intro -->
+	<section id="intro">
+		<a href="{{ site.url }}" class="logo"><img src="{{ "/assets/imgs/logo.png" | prepend: site.baseurl }}" alt="logo" /></a>
+		<header>
+			<h2>{{ site.title }}</h2>
+			<p>{{ site.description }}</p>
+		</header>
+	</section>
+  
+  {% include mini-post.html %}
+  
+  {% include featuredPosts.html %}
+
+    
+  {% include about.html %}
+    
+  {% include footer.html %}
+
+</section>

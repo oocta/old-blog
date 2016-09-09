@@ -1,0 +1,17 @@
+<!-- Mini Posts -->
+<section>
+  <div class="mini-posts">
+    <!-- Mini Post -->
+    <h3>Recent Posts</h3>
+    {% for post in site.posts limit: 3 %}
+      <article class="mini-post">
+        <header>
+          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <time class="published" datetime="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          <a href="#" class="author"><img src="{{ post.avartar }}" alt="" /></a>
+        </header>
+        <a href="{{ post.url }}" class="image"><img src="{{ post.featured }}" alt="" /></a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
