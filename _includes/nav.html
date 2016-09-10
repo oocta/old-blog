@@ -3,7 +3,7 @@
 
   <!-- Search -->
   <section>
-    <form class="search" method="get" action="#">
+    <form class="search" method="get" action="{{ "/search/" | prepend: site.baseurl }}">
       <input type="text" name="query" placeholder="Search" />
     </form>
   </section>
@@ -12,7 +12,7 @@
   <section>
     <ul class="links">
       <li>
-        <a href="#">
+        <a href="{{ "/about" | prepend: site.baseurl  }}">
           <h3>About</h3>
           <p>biography</p>
         </a>

@@ -106,39 +106,17 @@
     // Move to main on <=large, back to sidebar on >large.
     skel
       .on('+large', function () {
-        $intro.prependTo($main);
+        alert(isIndex())
+        isIndex() && $intro.prependTo($main);
       })
       .on('-large', function () {
-        $intro.prependTo($sidebar);
+        // $intro.prependTo($sidebar);
       });
 
   });
-  
-  initializeSearch();
-  
-  function initializeSearch() {
-    var map = {
-      'category': getParam('category'),
-      'tags': getParam('tags')
-    };
-    
-    $.each(map, function (type, value) {
-      if (value !== null) {
-        $.getJSON('/search.json', function(data) {
-            posts = filterPostsByPropertyValue(data, type, value);
-            if (posts.length > 0) {
-              noResultPage();
-            } else {
-              layoutResultsPage(type, value, posts);
-            }
-        });
-      }
-    });
+
+  function isIndex() {
+    return (site.baseurl === location.href);
   }
-  
-  function getParam(key) {
-    var params = (document.location.search).replace(/(^\?)/, '').split('&').map(function (n) {return n = n.split('='), this[n[0]] = n[1], this;}.bind({}))[0];
-    return params[key] ? params[key] : '';
-  }
-  
+
 })(jQuery);

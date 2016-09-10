@@ -22,6 +22,7 @@
 
 		@include breakpoint(xlarge) {
 			padding: _size(section-spacing);
+			padding-top: 0;
 		}
 
 		@include breakpoint(large) {
@@ -30,6 +31,7 @@
 
 		@include breakpoint(small) {
 			padding: _size(section-spacing-small);
+			padding-top: 0;
 		}
 
 		body.single & {
