@@ -22,7 +22,6 @@
 
 		@include breakpoint(xlarge) {
 			padding: _size(section-spacing);
-			padding-top: 0;
 		}
 
 		@include breakpoint(large) {

@@ -25,7 +25,7 @@
 <!-- Scripts -->
 <script type="text/javascript">
   var site = {
-    baseurl: "{{ site.url | append: site.baseurl }}"
+    baseurl: "{{ site.url | append: site.baseurl }}/"
   };
 </script>
 <script src="{{"/assets/js/jquery.min.js" | prepend: site.baseurl}}"></script>

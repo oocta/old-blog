@@ -106,11 +106,10 @@
     // Move to main on <=large, back to sidebar on >large.
     skel
       .on('+large', function () {
-        alert(isIndex())
         isIndex() && $intro.prependTo($main);
       })
       .on('-large', function () {
-        // $intro.prependTo($sidebar);
+        $intro.prependTo($sidebar);
       });
 
   });
