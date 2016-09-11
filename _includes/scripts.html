@@ -1,6 +1,58 @@
+<!-- Templates -->
+{% raw %}
+<script id="_searchTmpl" type="text/x-handlebars-template">
+<article class="post">
+  <header>
+    <div class="title">
+      <h2><a href="{{ url }}">{{ title }}</a></h2>
+      {{#if subTitle}}<p>{{ subTitle }}</p>{{/if}}
+    </div>
+    <div class="meta">
+      <time class="published" datetime="{{ date }}">{{ date }}</time>
+      <a href="#" class="author"><span class="name"><strong>{{ author }}</strong></span><img src="{{ avatar }}" alt="" /></a>
+    </div>
+  </header>
+  <p>{{ excerpt }}</p>
+  <footer>
+    <ul class="actions">
+      <li><a href="{{ url }}" class="button big">Continue Reading</a></li>
+    </ul>
+  </footer>
+</article>
+</script>
+{% endraw %}
+
 <!-- Scripts -->
+<script type="text/javascript">
+  var site = {
+    baseurl: "{{ site.url | append: site.baseurl }}/"
+  };
+</script>
 <script src="{{"/assets/js/jquery.min.js" | prepend: site.baseurl}}"></script>
 <script src="{{"/assets/js/skel.min.js" | prepend: site.baseurl}}"></script>
 <script src="{{"/assets/js/util.js" | prepend: site.baseurl}}"></script>
+<script src="{{ "/assets/js/handlebars.js" | prepend: site.baseurl }}"></script>
 <!--[if lte IE 8]><script src="{{"assets/js/ie/respond.min.js" | prepend: site.baseurl}}"></script><![endif]-->
 <script src="{{"/assets/js/main.js" | prepend: site.baseurl}}"></script>
+
+<script type="text/javascript">
+  window.store = {
+    {% for post in site.posts %}
+      "{{ post.url | slugify }}": {
+        "title": "{{ post.title | xml_escape }}",
+        "subTitle": "{{ post.subTitle | xml_escape }}",
+        "author": "{{ site.author.name | xml_escape }}",
+        "category": "{{ post.category | xml_escape }}",
+        "content": {{ post.content | strip_html | strip_newlines | jsonify }},
+        "excerpt": {{ post.excerpt | strip_html | strip_newlines | jsonify }},
+        "avatar": "{{ site.author.avatar | prepend: site.baseurl }}",
+        "url": "{{ post.url | xml_escape }}",
+        "tags": [{% for tag in post.tags | split: ' ' %} "{{ tag }}" {% endfor %}],
+        "date": "{{ post.date | date: "%b %-d, %Y" }}"
+      }
+      {% unless forloop.las %},{% endunless %}
+    {% endfor %}
+  };
+</script>
+<script src="{{"/assets/js/lunr.min.js" | prepend: site.baseurl}}"></script>
+<script src="{{"/assets/js/search.js" | prepend: site.baseurl}}"></script>

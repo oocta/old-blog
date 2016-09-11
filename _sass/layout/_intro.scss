@@ -50,7 +50,6 @@
 
 		@include breakpoint(large) {
 			margin: 0 0 _size(section-spacing) 0;
-			text-align: center;
 
 			header {
 				h2 {
@@ -58,7 +57,7 @@
 				}
 
 				p {
-					font-size: 0.7em;
+					font-size: 1em;
 				}
 			}
 		}
