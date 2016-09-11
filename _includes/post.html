@@ -3,6 +3,9 @@
 
 	<!-- Post -->
 		<article class="post">
+			{% if page.featured %}
+			<span class="image featured"><img src="{{ page.featured | prepend: site.baseurl }}" alt="featured image" /></span>
+      {% endif %}
 			<header>
 				<div class="title">
 					<h2>{{ page.title }}</h2>
@@ -15,9 +18,6 @@
 					<a href="#" class="author"><span class="name">{{ site.author.name }}</span><img src="{{ site.author.avatar | prepend: site.baseurl }}" alt="avatar" /></a>
 				</div>
 			</header>
-      {% if page.featured %}
-			<span class="image featured"><img src="{{ page.featured | prepend: site.baseurl }}" alt="featured image" /></span>
-      {% endif %}
 			{{ content }}
 			<footer>
 				<ul class="stats">

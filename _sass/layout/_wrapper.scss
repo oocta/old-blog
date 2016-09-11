@@ -30,6 +30,7 @@
 
 		@include breakpoint(small) {
 			padding: _size(section-spacing-small);
+			padding-top: 0;
 		}
 
 		body.single & {
