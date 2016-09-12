@@ -16,7 +16,7 @@
 title: frontend
 email: function.bind@gmail.com
 description: 프론트엔드에 대한 고민을 늘 하고 있지만, <br/>딱히 한건 없어서 블로그를 만들면<br/>뭔가 하지않을까 싶어서 만든 블로그.<br/>프론트엔드 개발자로 살아남기.
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://oocta.github.io" # the base hostname & protocol for your site
 twitter_username: o__octa
 github_username:  oocta
