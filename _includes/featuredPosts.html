@@ -10,7 +10,13 @@
           <h3><a href="#">{{ post.title }}</a></h3>
           <time class="published" datetime="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</time>
         </header>
-        <a href="{{ post.url }}" class="image"><img src="{{ post.featured | prepend: site.baseurl }}" alt="" /></a>
+        <a href="{{ post.url }}" class="image">
+          {% if post.featured contains 'https://' or post.featured contains 'http://' %}
+          <img src="{{ post.featured }}" alt="" />
+          {% else %}
+          <img src="{{ post.featured | prepend: site.baseurl }}" alt="" />
+          {% endif %}
+        </a>
       </article>
     </li>
     {% endif %}
