@@ -4,7 +4,13 @@
 	<!-- Post -->
 		<article class="post">
 			{% if page.featured %}
-			<span class="image featured"><img src="{{ page.featured | prepend: site.baseurl }}" alt="featured image" /></span>
+			<span class="image featured">
+        {% if post.featured contains "https://" or post.featured contains "http://" %}
+        <img src="{{ page.featured }}" alt="featured image" />
+        {% else %}
+        <img src="{{ page.featured | prepend: site.baseurl }}" alt="featured image" />
+        {% endif %}
+      </span>
       {% endif %}
 			<header>
 				<div class="title">
