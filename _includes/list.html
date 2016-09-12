@@ -2,11 +2,9 @@
 <div id="main">
   {% for post in paginator.posts %}
   <article class="post">
-    {% assign %}
-    {% endif %}
     {% if post.featured %}
     <a href="#" class="image featured">
-      {% if post.featured contains "https://" or post.featured contains "http://" %}
+      {% if post.featured contains 'https://' or post.featured contains 'http://' %}
       <img src="{{ post.featured }}" alt="" />
       {% else %}
       <img src="{{ post.featured | prepend: site.baseurl }}" alt="" />

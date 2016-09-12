@@ -5,7 +5,7 @@
 		<article class="post">
 			{% if page.featured %}
 			<span class="image featured">
-        {% if post.featured contains "https://" or post.featured contains "http://" %}
+        {% if page.featured contains 'https://' or page.featured contains 'http://' %}
         <img src="{{ page.featured }}" alt="featured image" />
         {% else %}
         <img src="{{ page.featured | prepend: site.baseurl }}" alt="featured image" />
