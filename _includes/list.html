@@ -2,6 +2,9 @@
 <div id="main">
   {% for post in paginator.posts %}
   <article class="post">
+    {% if post.featured %}
+    <a href="#" class="image featured"><img src="{{ post.featured | prepend: site.baseurl }}" alt="" /></a>
+    {% endif %}
     <header>
       <div class="title">
         <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a></h2>
@@ -12,9 +15,6 @@
         <a href="{{ site.author.about | prepend: site.baseurl }}" class="author"><span class="name"><strong>{{ site.author.name }}</strong></span><img src="{{ site.author.avatar | prepend: site.baseurl }}" alt="" /></a>
       </div>
     </header>
-    {% if post.featured %}
-    <a href="#" class="image featured"><img src="{{ post.featured | prepend: site.baseurl }}" alt="" /></a>
-    {% endif %}
     <p>{{ post.excerpt }}</p>
     <footer>
       <ul class="actions">
